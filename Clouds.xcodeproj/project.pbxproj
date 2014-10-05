@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD8E736819D35A5400F51C44 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8E736719D35A5400F51C44 /* CoreLocation.framework */; };
 		FD99899119CB746C006E630E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD99899019CB746C006E630E /* AppDelegate.swift */; };
 		FD99899319CB746C006E630E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD99899219CB746C006E630E /* ViewController.swift */; };
 		FD99899619CB746C006E630E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD99899419CB746C006E630E /* Main.storyboard */; };
 		FD99899819CB746C006E630E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD99899719CB746C006E630E /* Images.xcassets */; };
 		FD9989A419CB746C006E630E /* CloudsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9989A319CB746C006E630E /* CloudsTests.swift */; };
+		FDEF10FA19CF9A760010D9B0 /* Current.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEF10F919CF9A760010D9B0 /* Current.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FD8E736719D35A5400F51C44 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		FD99898B19CB746C006E630E /* Clouds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clouds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD99898F19CB746C006E630E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD99899019CB746C006E630E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +37,7 @@
 		FD99899D19CB746C006E630E /* CloudsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CloudsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD9989A219CB746C006E630E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD9989A319CB746C006E630E /* CloudsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsTests.swift; sourceTree = "<group>"; };
+		FDEF10F919CF9A760010D9B0 /* Current.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Current.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD8E736819D35A5400F51C44 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +65,7 @@
 				FD99898D19CB746C006E630E /* Clouds */,
 				FD9989A019CB746C006E630E /* CloudsTests */,
 				FD99898C19CB746C006E630E /* Products */,
+				FD8E736719D35A5400F51C44 /* CoreLocation.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +83,7 @@
 			children = (
 				FD99899019CB746C006E630E /* AppDelegate.swift */,
 				FD99899219CB746C006E630E /* ViewController.swift */,
+				FDEF10F919CF9A760010D9B0 /* Current.swift */,
 				FD99899419CB746C006E630E /* Main.storyboard */,
 				FD99899719CB746C006E630E /* Images.xcassets */,
 				FD99898E19CB746C006E630E /* Supporting Files */,
@@ -208,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDEF10FA19CF9A760010D9B0 /* Current.swift in Sources */,
 				FD99899319CB746C006E630E /* ViewController.swift in Sources */,
 				FD99899119CB746C006E630E /* AppDelegate.swift in Sources */,
 			);
@@ -395,6 +403,7 @@
 				FD9989A919CB746C006E630E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FD9989AA19CB746C006E630E /* Build configuration list for PBXNativeTarget "CloudsTests" */ = {
 			isa = XCConfigurationList;
@@ -403,6 +412,7 @@
 				FD9989AC19CB746C006E630E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
