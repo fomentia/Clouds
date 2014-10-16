@@ -165,9 +165,11 @@
 				TargetAttributes = {
 					FD99898A19CB746C006E630E = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = C8DJ6DMT5A;
 					};
 					FD99899C19CB746C006E630E = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = C8DJ6DMT5A;
 						TestTargetID = FD99898A19CB746C006E630E;
 					};
 				};
@@ -354,6 +356,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -365,6 +369,7 @@
 				INFOPLIST_FILE = CloudsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Clouds.app/Clouds";
 			};
 			name = Debug;
@@ -373,6 +378,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -380,6 +387,7 @@
 				INFOPLIST_FILE = CloudsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Clouds.app/Clouds";
 			};
 			name = Release;
