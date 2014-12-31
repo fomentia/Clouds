@@ -62,11 +62,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let forecastURL = NSURL(string: String(format: "%X,%X", currentLatitude, currentLongitude), relativeToURL: baseURL)
         
         let sharedSession = NSURLSession.sharedSession()
-        let downloadTask: NSURLSessionDownloadTask = sharedSession.downloadTaskWithURL(forecastURL, completionHandler: { (location: NSURL!, response: NSURLResponse!, error: NSError!) -> Void in
+        let downloadTask: NSURLSessionDownloadTask = sharedSession.downloadTaskWithURL(forecastURL!, completionHandler: { (location: NSURL!, response: NSURLResponse!, error: NSError!) -> Void in
             
             if (error == nil) {
                 let dataObject = NSData(contentsOfURL: location)
-                let weatherDictionary: NSDictionary = NSJSONSerialization.JSONObjectWithData(dataObject, options: nil, error: nil) as NSDictionary
+                let weatherDictionary: NSDictionary = NSJSONSerialization.JSONObjectWithData(dataObject!, options: nil, error: nil) as NSDictionary
                 
                 let currentWeather = Current(weatherDictionary: weatherDictionary)
                 

@@ -71,7 +71,7 @@ struct Current {
         }
         
         var iconImage = UIImage(named: imageName)
-        return iconImage
+        return iconImage!
         
     }
 }
