@@ -41,15 +41,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 //        getUpdatedWeatherData()
     }
     
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        let location: CLLocation = locations.last as CLLocation
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location: CLLocation = locations.last! as CLLocation
         currentLatitude = location.coordinate.latitude
         currentLongitude = location.coordinate.latitude
         
-        geocoder.reverseGeocodeLocation(location, completionHandler: { (placemarks: [AnyObject]!, error: NSError!) in
-            if placemarks.count > 0 {
-                self.currentLocationAddressRaw = placemarks[0]
-                println("\(self.currentLocationAddressRaw)")
+        geocoder.reverseGeocodeLocation(location, completionHandler: { (placemarks: [CLPlacemark]?, error: NSError?) in
+            if placemarks!.count > 0 {
+                self.currentLocationAddressRaw = placemarks![0]
+                print("\(self.currentLocationAddressRaw)")
             }
         })
         
@@ -57,16 +57,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
 
     func getUpdatedWeatherData() -> Void {
-        println("\(currentLongitude), \(currentLatitude)")
+        print("\(currentLongitude), \(currentLatitude)")
         let baseURL = NSURL(string: "https://api.forecast.io/forecast/\(apiKey)/")
         let forecastURL = NSURL(string: String(format: "%X,%X", currentLatitude, currentLongitude), relativeToURL: baseURL)
         
         let sharedSession = NSURLSession.sharedSession()
-        let downloadTask: NSURLSessionDownloadTask = sharedSession.downloadTaskWithURL(forecastURL!, completionHandler: { (location: NSURL!, response: NSURLResponse!, error: NSError!) -> Void in
+        let downloadTask: NSURLSessionDownloadTask = sharedSession.downloadTaskWithURL(forecastURL!, completionHandler: { (location: NSURL?, response: NSURLResponse?, error: NSError?) -> Void in
             
             if (error == nil) {
-                let dataObject = NSData(contentsOfURL: location)
-                let weatherDictionary: NSDictionary = NSJSONSerialization.JSONObjectWithData(dataObject!, options: nil, error: nil) as NSDictionary
+                let dataObject = NSData(contentsOfURL: location!)
+                let weatherDictionary: NSDictionary = try! NSJSONSerialization.JSONObjectWithData(dataObject!, options: NSJSONReadingOptions.AllowFragments) as! NSDictionary
                 
                 let currentWeather = Current(weatherDictionary: weatherDictionary)
                 

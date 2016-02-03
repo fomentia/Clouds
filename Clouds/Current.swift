@@ -20,14 +20,14 @@ struct Current {
     var icon: UIImage?
     
     init(weatherDictionary: NSDictionary) {
-        let currentWeather = weatherDictionary["currently"] as NSDictionary
-        let currentDateInSecondsSince1970 = currentWeather["time"] as Int
-        let iconString = currentWeather["icon"] as String
+        let currentWeather = weatherDictionary["currently"] as! NSDictionary
+        let currentDateInSecondsSince1970 = currentWeather["time"] as! Int
+        let iconString = currentWeather["icon"] as! String
         
-        temperature       = currentWeather["temperature"] as Int
-        humidity          = currentWeather["humidity"] as Double
-        precipProbability = currentWeather["precipProbability"] as Double
-        summary           = currentWeather["summary"] as String
+        temperature       = currentWeather["temperature"] as! Int
+        humidity          = currentWeather["humidity"] as! Double
+        precipProbability = currentWeather["precipProbability"] as! Double
+        summary           = currentWeather["summary"] as! String
         currentTime       = dateStringFromUnixTime(currentDateInSecondsSince1970)
         icon              = weatherIconFromString(iconString)
     }
@@ -70,7 +70,7 @@ struct Current {
             imageName = "default"
         }
         
-        var iconImage = UIImage(named: imageName)
+        let iconImage = UIImage(named: imageName)
         return iconImage!
         
     }
